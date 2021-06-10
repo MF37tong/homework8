@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .top {
+            width: 100%;
+            height: 100px;
+            background-color: black;
+            display: flex;
+        }
+        .topleft img {
+            margin-left: 50px;
+            width: 200px;
+            height: 100px;
+        }
+        .topcenter1 {
+            margin-left: 30px;
+        }
+        .u1 {
+            list-style: none;
+        }
+        .u1 li {
+            float: left;
+            margin-left: 30px;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .u1 li > a {
+            text-decoration: none;
+            color: white;
+        }
+        .topcenter2 {
+            margin-left: 30px;
+        }
+        .u2 {
+            list-style: none;
+        }
+        .u2 li {
+            float: left;
+            margin-left: 30px;
+            color: white;
+            font-size: 15px;
+            text-align: center;
+            line-height: 100px;
+            display: flex;
+        }
+        .img1 {
+            margin-top: 43px;
+            margin-right: 5px;
+            width: 15px;
+            height: 15px;
+            background: url(./images/1.png);
+            background-position: 100px 207px;
+        }
+        .u2 li > a {
+            text-decoration: none;
+            color: white;
+        }
+        .topcenter3 {
+            margin-left: 30px;
+        }
+        .u3 {
+            list-style: none;
+        }
+        .u3 li {
+            float: left;
+            margin-left: 30px;
+            color: white;
+            font-size: 15px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .u3 li > a {
+            text-decoration: none;
+            color: white;
+        }
+        .topright {
+            margin-left: 30px;
+            margin-top: 35px;
+            position: relative;
+        }
+        .search {
+            position: absolute;
+            margin-top: -27px;
+            margin-left: 10px;
+            color: grey;
+        }
+        .music {
+            width: 100%;
+            height: 650px;
+            margin-top: 100px;
+            display: flex;
+        }
+        .musicleft {
+            width: 65%;
+            height: 650px;
+        }
+        .musicright {
+            width: 35%;
+            height: 650px;
+        }
+        .musicimg {
+            width: 260px;
+            height: 260px;
+            margin-left: 50px;
+            border: 0.5px solid gray;
+            border-radius: 50%;
+        }
+        .centercircle {
+            margin-top: -150px;
+            margin-left: 105px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 0.5px solid gray;
+            position: absolute;
+            background-color: white;
+            opacity: 0.5;
+        }
+        .insidecircle {
+            margin-top: -137px;
+            margin-left: 118px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border: 0.5px solid gray;
+            position: absolute;
+            background-color: white;
+            opacity: 0.8;
+        }
+        .musicimg img {
+            margin-left: 5px;
+            margin-top: 5px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            position: relative;
+            animation-name: animation1;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        @keyframes animation1{
+            0% {
+                transform: rotate(0 deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .play {
+            margin-top: 30px;
+            width: 350px;
+            height: 150px;
+            display: flex;
+        }
+        .playbtn {
+            margin-top: 30px;
+            margin-left: 10px;
+            background: url(./images/6.jpg);
+            width: 42px;
+	        height: 42px;
+	        background-position: -110px 0px;
+        }
+        .playbtn:hover {
+            background-position: -162px 0px;
+        }
+        .processcon {
+            width: 200px;
+            height: 10px;
+            margin-left: 20px;
+            margin-top: 45px;
+        }
+        .processcon1 {
+            width: 100%;
+            height: 5px;
+        }
+        .process {
+            width: 100%;
+            height: 5px;
+            background: grey;
+            border-radius: 2.5px;
+            position: relative;
+        }
+        .processbtn {
+            width: 0;
+            height: 5px;
+            background: orange;
+        }
+        .btn {
+            width: 10px;
+            height: 10px;
+            left: 0;
+            background: url(./images/1.png) 0 -128px;
+	        position: absolute;
+	        top: -3px;
+        }
+        .time {
+            width: 30px;
+            height: 30px;
+            margin-top: 32px;
+            margin-left: 10px;
+            font-size: 15px;
+            text-align: center;
+            line-height: 30px;
+            color: grey;
+        }
+        .vlm {
+            margin-top: 38px;
+            margin-left: 30px;
+            background: url(./images/6.jpg);
+            width: 23px;
+	        height: 23px;
+	        background-position: -45px 0px;
+        }
+        .vlm:hover {
+            background-position: -70px 0px;
+        }
+        .download {
+            width: 200px;
+            height: 50px;
+            margin-left: 80px;
+            background: url(./images/6.jpg);
+            background-position: 0 -47px;
+            background-repeat: no-repeat;
+            display: flex;
+        }
+        .downloadimg {
+            width: 18px;
+            height: 16px;
+            background: url(./images/6.jpg);
+            background-position: 0 0;
+            margin-left: 20px;
+            margin-top: 13px;
+        }
+        .downloadtext {
+            margin-left: 10px;
+            margin-top: 8px;
+        }
+        .danmu {
+            width: 400px;
+            height: 80px;
+            margin-left: 20px;
+            margin-top: 50px;
+            display: flex;
+        }
+        .headimg {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        .headimg img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        .said img {
+            width: 200px;
+            height: 60px;
+        }
+        .ctx {
+            margin-top: -65px;
+            margin-left: 20px;
+        }
+        .ctx p {
+            margin-top: 5px;
+        }
+        .name {
+            text-align: center;
+            font-size: 25px;
+        }
+        .singer {
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .singer p {
+            margin-top: 5px;
+        }
+        .lain {
+            width: 80%;
+            height: 5px;
+            margin-top: 20px;
+            margin: 0 auto;
+        }
+        .song {
+            width: 100%;
+            height: 200px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        .song p {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .discuss {
+            width: 70%;
+            height: 50px;
+            margin: 0 auto;
+        }
+        .lain2 {
+            width: 100%;
+            height: 5px;
+            margin-top: 10px;
+        }
+        .discusscon {
+            width: 70%;
+            height: 160px;
+            margin-top: 20px;
+            margin: 0 auto;
+        }
+        .discusstop {
+            width: 100%;
+            height: 160px;
+            margin: 0 auto;
+            display: flex;
+        }
+        .head {
+            width: 80px;
+            height: 80px;
+        }
+        .head img {
+            width: 80px;
+            height: 80px;
+        }
+        .inpcon {
+            width: 1000px;
+            height: 160px;
+            margin-left: 20px;
+            border: 0.5px solid grey;
+        }
+        .inp {
+            margin-top: 10px;
+            margin-left: 10px;
+            width: 900px;
+            height: 30px;
+            outline: none;
+            border: none;
+        }
+        .discussbottom {
+            width: 70%;
+            height: 50px;
+            margin: 0 auto;
+            margin-top: 20px;
+            display: flex;
+            float: right;
+        }
+        .emoji {
+            width: 22px;
+            height: 20px;
+            background: url(./images/9.png);
+            margin-left: -210px;
+        }
+        .btncon {
+            width: 200px;
+            height: 50px;
+            margin-left: 750px;
+            display: flex;
+            line-height: 50px;
+        }
+        .btn2 {
+            width: 80px;
+            height: 40px;
+            font-size: 20px;
+            background: orange;
+            color: white;
+            margin-left: 10px;
+            border-radius: 10px;
+        }
+        .gooddiscuss {
+            width: 70%;
+            height: 50px;
+            margin: 0 auto;
+            margin-top: 150px;
+        }
+        .gooddiscon {
+            width: 70%;
+            margin: 0 auto;
+        }
+        .gooddiscon ul {
+            width: 100%;
+            list-style: none;
+        }
+        #dislist li {
+            margin-top: 20px;
+        }
+        #dislist li img {
+            width: 80px;
+            height: 80px;
+        }
+        .gooddistop {
+            width: 100%;
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .discontent {
+            display: flex;
+            margin-left: 20px;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .discontent:nth-child(1) {
+            color: orange;
+        }
+        .page {
+            width: 80%;
+            height: 50px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        .pageicon {
+            margin: 0 auto;
+            display: flex;
+            margin-left: 350px;
+        }
+        .pageicon li {
+            list-style: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            background: rgb(172, 169, 169);
+            margin-left: 15px;
+        }
+        .pageicon li a {
+            text-decoration: none;
+            color: black;
+        }
+        .pageicon li:nth-child(2) {
+            background: orange;
+        }
+        .pageicon li:nth-child(5) {
+            background: white;
+        }
+        .dianzan {
+            margin-right: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .dianzanimg img {
+            width: 15px;
+            height: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="top">
+            <div class="topleft">
+                <img src="./images/2.jpg" alt="">
+            </div>
+            <div class="topcenter1">
+                <ul class="u1">
+                    <li><a href="#" style="color: orange;">首页</a></li>
+                    <li><a href="#">榜单</a></li>
+                    <li><a href="#">歌手</a></li>
+                    <li><a href="#">下载酷我客户端</a></li>
+                </ul>
+            </div>
+            <div class="topcenter2">
+                <ul class="u2">
+                    <li><div class="img1"></div><a href="#">美女秀</a></li>
+                    <li><div class="img1"></div><a href="#">酷我相机</a></li>
+                    <li><div class="img1"></div></span><a href="#">VIP会员</a></li>
+                    <li><div class="img1"></div><a href="#">i听</a></li>
+                </ul>
+            </div>
+            <div class="topcenter3">
+                <ul class="u3">
+                    <li><a href="#">更多服务</a></li>
+                    <li><a href="#">登录</a></li>
+                    <li><a href="#">^</a></li>
+                </ul>
+            </div>
+            <div class="topright">
+                <img src="./images/4.png" alt="">
+                <div class="search">找到好音乐</div>
+            </div>
+        </div>
+        <div class="music">
+            <div class="musicleft">
+                <div class="name">
+                    喜羊羊
+                </div>
+                <div class="singer">
+                    <p>专辑：<span style="color: orange;">儿歌大全</span>&nbsp;&nbsp;&nbsp;&nbsp;歌手：<span style="color: orange;">华语群星</span>&nbsp;&nbsp;&nbsp;&nbsp;分享&nbsp;&nbsp;&nbsp;&nbsp;<span><img src="./images/8.jpg" alt=""></span>&nbsp;评论</p>
+                    <p>上传时间：2015-10-02歌曲来源：网络</p>
+                </div>
+                <div class="lain">
+                    <hr width=100%>
+                </div>
+                <div class="song">
+                    <p>在所有天气 拥有叫人 大笑的力量</p>
+                    <p>虽然我只是只羊</p>
+                    <p>虽然我只是只羊</p>
+                    <p>喜羊羊 美羊羊 懒羊羊 沸羊羊</p>
+                    <p>慢羊羊 软绵绵 红太狼 灰太狼</p>
+                </div>
+            </div>
+            <div class="musicright">
+                <div class="musicimg">
+                    <img src="./images/5.jpg" alt="">
+                    <div class="centercircle"></div>
+                    <div class="insidecircle"></div>
+                </div>
+                <div class="play">
+                    <audio src="./images/1.mp3" id="mymusic">
+                        <source src="./images/1.mp3">
+                    </audio>
+                    <div class="playbtn" id="playbtn"></div>
+                    <div class="processcon">
+                        <div class="processcon1">
+                            <div class="process" id="process">
+                                <div class="processbtn" id="processbtn"></div>
+                                <a href="#" class="btn" id="btn"></a>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="time">
+                        <p class="playtime" id="playtime">00:00</p>
+                    </div>
+                    <div class="vlm" id="vlm"></div>
+                </div>
+                <div class="download">
+                    <div class="downloadimg"></div>
+                    <div class="downloadtext">免费下载这首歌</div>
+                </div>
+                <div class="danmu">
+                    <div class="headimg">
+                        <img src="./images/7.jpg" alt="">
+                    </div>
+                    <div class="said">
+                        <img src="./images/10.jpg" alt="">
+                        <div class="ctx">
+                            <p>郭子仪——H5班</p>
+                            <p>喜羊羊与灰太狼</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="discuss">
+            <p>评论&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 8px;">1703条评论</span></p>
+            <div class="lain2">
+                <hr width="100%">
+            </div>
+        </div>
+        <div class="discusscon">
+            <div class="discusstop">
+                <div class="head">
+                    <img src="./images/7.jpg" alt="">
+                </div>
+                <div class="inpcon">
+                    <input type="text" class="inp" id="inp" placeholder="分享你的音乐见解">
+                </div>
+            </div>    
+            <div class="discussbottom">
+                <div class="emoji"></div>
+                <div class="btncon">
+                    <p class="number">已输入0字</p><button class="btn2" id="btn2">评论</button>
+                </div>
+            </div>
+        </div>
+        <div class="gooddiscuss">
+            <p>精彩评论</p>
+            <div class="lain2">
+                <hr width="100%">
+            </div>
+        </div>
+        <div class="gooddiscon">
+            <ul id="dislist">
+                <li>
+                    <div class='gooddistop'>
+                        <img src='./images/7.jpg' alt=''>
+                        <div class='discontent'>
+                            <p style='color:orange;'>郭子仪</p>
+                            <p class='discusses'>Too</p>
+                            <p>2017-06-10 07:00:42</p>
+                        </div>
+                    </div>
+                    <hr>
+                </li>
+                <li>
+                    <div class='gooddistop'>
+                        <img src='./images/3.jpg' alt=''>
+                        <div class='discontent'>
+                            <p style='color:orange;'>Forget</p>
+                            <p class='discusses'>我喜欢很多歌曲...</p>
+                            <p>2017-06-03 16:58:02</p>
+                        </div>
+                    </div>
+                    <hr>
+                </li>
+                <li>
+                    <div class='gooddistop'>
+                        <img src='./images/3.jpg' alt=''>
+                        <div class='discontent'>
+                            <p style='color:orange;'>亚里士多德</p>
+                            <p class='discusses'>学校晚会表演这歌</p>
+                            <p>2017-05-14 16:16:53</p>
+                        </div>
+                    </div>
+                    <hr>
+                </li>
+            </ul>
+        </div>
+        <div class="page">
+            <ul class="pageicon">
+                <li><a href="#"><</a></li>
+                <li><a href="#" style="color: white;">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li>...</li>
+                <li><a href="#">17</a></li>
+                <li><a href="#">></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    var mymusic = document.getElementById("mymusic");
+    var playbtn = document.getElementById("playbtn");
+    var processbtn = document.getElementById("processbtn");
+    var playtime  = document.getElementById("playtime");
+    var vlm = document.getElementById("vlm");
+    var btn = document.getElementById("btn");
+    var process = document.getElementById("process");
+    var btn2 = document.getElementById("btn2");
+    var dislist = document.getElementById("dislist");
+    var inp = document.getElementById("inp");
+
+    var a = 1;
+    var timeid;
+
+    // 播放器部分
+    playbtn.onclick = function() {
+        if(a == 1) {
+            mymusic.play();
+            playbtn.style.backgroundPositionX = -207+'px';
+            playbtn.style.backgroundPositionY = -47+'px';
+            timeid = setInterval(function(){
+                btn.style.left = (mymusic.currentTime)*100/(mymusic.duration)+"%";
+                process.style.width = 100+'%'-(mymusic.currentTime)*100/(mymusic.duration)+"%";
+                processbtn.style.width = (mymusic.currentTime)*100/(mymusic.duration)+"%";
+                if(mymusic.currentTime<10){
+                    playtime.innerHTML = "00:0"+Math.floor(mymusic.currentTime);
+                }
+                else if(mymusic.currentTime < 60){
+                    playtime.innerHTML = "00:"+Math.floor(mymusic.currentTime);
+                }
+                else{
+                    var m = parseInt(mymusic.currentTime/60);
+                    var s = mymusic.currentTime-m*60;
+                    if(m<10){
+                        if(s<10){
+                            playtime.innerHTML = "0"+m+":"+"0"+parseInt(s);
+                        }
+                        else{
+                            playtime.innerHTML = "0"+m+":"+parseInt(s);
+                        }
+                    }
+                    else{
+                        if(s<10){
+                            playtime.innerHTML = m+":"+"0"+parseInt(s);
+                        }
+                        else{
+                            playtime.innerHTML = m+":"+parseInt(s);
+                        }
+                    }
+                }
+            },1000)
+            playbtn.onmouseout = function(){
+                playbtn.style.backgroundPositionX = -207+'px';
+                playbtn.style.backgroundPositionY = 0+'px';
+            }
+            playbtn.onmouseover = function(){
+                playbtn.style.backgroundPositionX = -207+'px';
+                playbtn.style.backgroundPositionY = -47+'px';
+            }
+            a = 0;
+        }
+        else if (a == 0){
+            mymusic.pause();
+            playbtn.style.backgroundPositionX = -162+'px';
+            playbtn.style.backgroundPositionY = 0+'px';
+            playbtn.onmouseover = function(){
+                playbtn.style.backgroundPositionX = -162+'px';
+                playbtn.style.backgroundPositionY = 0+'px';
+            }
+            playbtn.onmouseout = function(){
+                playbtn.style.backgroundPositionX = -110+'px';
+                playbtn.style.backgroundPositionY = 0+'px';
+            }
+            a = 1;
+        }
+    }
+
+    // 音量控制
+    vlm.onclick = function(){
+      if(mymusic.volume!=0){
+        mymusic.volume = 0;
+      }else{
+        mymusic.volume = 1;
+      }  
+    }
+
+    // 时间格式化
+    function format(Date){
+	    var Y = Date.getFullYear();
+	    var M = Date.getMonth() + 1;
+		    M = M < 10 ? '0' + M : M;
+	    var D = Date.getDate();
+		    D = D < 10 ? '0' + D : D;
+	    var H = Date.getHours();
+		    H = H < 10 ? '0' + H : H;
+	    var Mi = Date.getMinutes();
+		    Mi = Mi < 10 ? '0' + Mi : Mi;
+	    var S = Date.getSeconds();
+		    S = S < 10 ? '0' + S : S;
+		return Y + '-' + M + '-' + D + ' ' + H + ':' + Mi + ':' + S;
+    }
+
+    // 保存本地
+    function saveDis(disContent) {
+        var date1 = new Date();
+        var date = format(date1);
+		var disList = localStorage["disList"];
+		if(disList == "" || disList == null || disList == undefined) {
+			localStorage["disList"] = "[]";
+		}
+		disList = JSON.parse(localStorage["disList"]);
+		var disObj = {disId: disList.length, disCotent: disContent, date: date};
+		disList.push(disObj);
+		localStorage["disList"] = JSON.stringify(disList);
+    }
+    
+    // 获取本地存储数据
+	function getDis() {
+        var date1 = new Date();
+        var date = format(date1);
+		var disList = localStorage["disList"];
+		disList = JSON.parse(disList);
+		for(var i = 0; i < disList.length; i++) {
+			var liNode = document.createElement("li");
+			liNode.setAttribute("disid", disList[i]['disId']);
+			liNode.innerHTML = "<li><div class='gooddistop'><img src='./images/7.jpg' alt=''><div class='discontent'><p style='color:orange;'>郭子仪</p><p class='discusses'>"+ disList[i]["disCotent"] +"</p><p>"+disList[i]["date"]+"</p></div></div><hr></li>"
+			dislist.appendChild(liNode);
+		}
+	}
+
+    // 添加节点
+	function addDis(disContent) {
+        var date1 = new Date();
+        var date = format(date1);
+		var liNode = document.createElement("li");
+		var disList = localStorage["disList"];
+		disList = JSON.parse(disList);
+		var disId = disList.length;
+		liNode.setAttribute("disId", disId);
+		liNode.innerHTML = "<li><div class='gooddistop'><img src='./images/7.jpg' alt=''><div class='discontent'><p style='color:orange;'>郭子仪</p><p class='discusses'>"+ disContent +"</p><p>"+date+"</p></div></div><hr></li>"
+		dislist.appendChild(liNode);
+    }
+
+    btn2.onclick = function(){
+        var noteObj
+        var disContent = inp.value;
+		if(disContent == "") {
+			alert("文本框不能为空！");
+		}
+		else {
+			saveDis(disContent);
+			getDis();
+		}
+        inp.value = '';
+	}
+
+    window.onload = function() {
+        var disList = localStorage["disList"];
+		if(disList == "" || disList == null || disList == undefined) {
+			localStorage["disList"] = "[]";
+		}
+        else{
+            getDis();
+        }
+	}
+</script>
+</html>
